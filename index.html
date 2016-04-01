@@ -132,7 +132,7 @@ a.overlay,
 <div class="info-cta">
                     <button>PLAY VIDEO</button>
                 </div>
-<video id="video" style="width:30px;height:30px">
+<video id="video" style="width:100px;height:100px">
     <source src="./eclipse-video.mp4" type="video/mp4">
 </video>
 <script src="./scripts/jquery-2.2.2.min.js"></script>
@@ -141,13 +141,13 @@ a.overlay,
     $(document).ready(function() {
         $('button').on('click', function(){
             var video = document.getElementById("video");
-            if (video.requestFullscreen) {
+            /*if (video.requestFullscreen) {
             video.requestFullscreen();
             } else if (video.mozRequestFullScreen) {
             video.mozRequestFullScreen();
             } else if (video.webkitRequestFullscreen) {
             video.webkitRequestFullscreen();
-            }
+            }*/
             video.play()
         })
     });
