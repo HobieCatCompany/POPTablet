@@ -1,17 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <meta charset="utf-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
-		<title>POP Tablet</title>
-	</head>
-	<body>
-    <div style="width:50%;margin:auto;padding-top:100px;">
-    <h3>Test</h3>
+<!-- Django language code:  -->
+<head>
+<title>Hobie Eclipse</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0">
+<meta name="description" content="Stand tall on the water aboard the Eclipse, another world’s-first watercraft from Hobie." />
+<meta name="author" content="Hobie Cat Company" />
+<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+
+<style>
+html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; height: 100%; font-size: 62.5%;}
+body { margin: 0; font-family: "proxima-nova", helvetica, arial, verdana, lucida grande, sans-serif; font-size: 14px; font-size: 1.4rem; line-height: 1.45; color: #222222; background: #f4f4f4; }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+audio:not([controls]) { display: none; height: 0; }
+html, body, .mast {
+    width: 100%;
+    height: 100%;
+}
+html, body {
+    -webkit-font-smoothing: antialiased;
+}
+img {
+    max-width: 100%;
+}
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer;}
+button[disabled], html input[disabled] { cursor: default; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+button { margin-top: 30px; line-height: 1; font-size: 36px; background-color: #00acec; color: #ffffff; display: inline-block; border: #ffee00 4px solid; cursor: pointer; padding: 0.3em 0.5em; text-decoration: none; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+
+.step-on-and-go {
+    background-position: 20% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.layer1 {
+    position: absolute;
+    top: 22.5vh;
+    right: 13%;
+    width: 50%;
+    text-align: right;
+}
+.info-cta {
+    width: 100%;
+    font-weight: bold;
+    display: block;
+    position: relative;
+    width: auto;
+    color: rgba(255,255,96,0.9);
+    letter-spacing: -0.66px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 50, 0.15); 
+    font-size: 40px;
+    margin-top: 7px;
+}
+a.overlay,
+.mast,
+.step-on-and-go {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes float { 0% { -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% { -webkit-transform: translateY(-6px);
+    transform: translateY(-6px); }
+  100% { -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes float { 0% { -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); }
+  50% { -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px); }
+  100% { -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); } }
+
+.animated.float { 
+    -webkit-animation: float 3s linear infinite;
+    animation: float 3s linear infinite;
+}
+
+@font-face { font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova.eot"); src: url("fonts/proxima-nova/proximanova.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova.woff") format("woff"), url("fonts/proxima-nova/proximanova.ttf") format("truetype"), url("fonts/proxima-nova/proximanova.svg#proxima_nova_rgregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova-italic.eot"); src: url("fonts/proxima-nova/proximanova-italic.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova-italic.woff") format("woff"), url("fonts/proxima-nova/proximanova-italic.ttf") format("truetype"), url("fonts/proxima-nova/proximanova-italic.svg#proxima_novaregular_italic") format("svg"); font-weight: normal; font-style: italic; }
+
+@font-face { font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova-bold.eot"); src: url("fonts/proxima-nova/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova-bold.woff") format("woff"), url("fonts/proxima-nova/proximanova-bold.ttf") format("truetype"), url("fonts/proxima-nova/proximanova-bold.svg#proxima_nova_rgbold") format("svg"); font-weight: bold; font-style: normal; }
+
+.proxima-nova { font-family: "proxima-nova"; }
+
+@media screen and (orientation: portrait) {
+    .step-on-and-go .layer1 { position: absolute; top: 36%; right: 10.5%; width: 80%; text-align: center; }
+    .step-on-and-go .icon-play-inline { margin-top: 6vh; }
+}
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+    .step-on-and-go .info-cta { font-size: 24px; font-size: 2.4rem; margin-left: -0.6em; }
+}
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .step-on-and-go .info-cta { font-size: 24px; font-size: 2.4rem; margin-left: -0.6em; }
+}
+@media screen and (orientation: portrait) and (min-aspect-ratio: 100 / 100) and (max-aspect-ratio: 130 / 100) {
+    .step-on-and-go .layer1 { width: 60%; right: 6%; top: 29%; }
+}
+@media screen and (orientation: landscape) and (min-aspect-ratio: 100 / 134) and (max-aspect-ratio: 134 / 100) {
+    .step-on-and-go .layer1 { width: 60%; right: 6%; top: 29%; }
+}
+@media screen and (orientation: landscape) and (min-aspect-ratio: 233 / 100) {
+    .step-on-and-go .layer1 { width: 30vw; right: 25vw; }
+}
+</style>
+
+<body id="hobie-cat-kayaks-sailboats-and-catamarans">
+
+    <div class="mast" style="display: block;">
+        <div class="step-on-and-go" style="background-image: url('images/2016-slide-step-on-and-go.jpg');">
+            <div class="image-wrap layer1">
+                <img src="images/2016-slide-step-on-and-go-text.png">
+                <div class="info-cta">
+                    <button>PLAY VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <a class="overlay" href="eclipse-video.mp4"></a>
     </div>
-	</body>
+
+</body>
 </html>
