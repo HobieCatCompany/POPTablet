@@ -138,13 +138,13 @@ a.overlay,
     $(document).ready(function() {
         $('button').on('click', function(){
             var video = document.getElementById("video");
-            /*if (video.requestFullscreen) {
+            if (video.requestFullscreen) {
             video.requestFullscreen();
             } else if (video.mozRequestFullScreen) {
-            evideolem.mozRequestFullScreen();
+            video.mozRequestFullScreen();
             } else if (video.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-            }*/
+            video.webkitRequestFullscreen();
+            }
             video.play()
         })
     });
