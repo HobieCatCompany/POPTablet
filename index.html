@@ -129,6 +129,24 @@ a.overlay,
         </div>
         <a class="overlay" href="eclipse-video.mp4"></a>
     </div>
-
+<video id="video" style="width:10px;height:10px">
+    <source src="./eclipse-video.mp4" type="video/mp4">
+</video>
+<script src="./scripts/jquery-2.2.2.min.js"></script>
 </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('button').on('click', function(){
+            var video = document.getElementById("video");
+            if (video.requestFullscreen) {
+            video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+            evideolem.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+            }
+            video.play()
+        })
+    });
+</script>
 </html>
