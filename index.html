@@ -118,7 +118,7 @@ a.overlay,
 
 <body id="hobie-cat-kayaks-sailboats-and-catamarans">
 
-    <!--<div class="mast" style="display: block;">
+    <div class="mast" style="display: block;">
         <div class="step-on-and-go" style="background-image: url('images/2016-slide-step-on-and-go.jpg');">
             <div class="image-wrap layer1">
                 <img src="images/2016-slide-step-on-and-go-text.png">
@@ -128,28 +128,7 @@ a.overlay,
             </div>
         </div>
         <a class="overlay" href="eclipse-video.mp4"></a>
-    </div>-->
-<div class="info-cta">
-                    <button>PLAY VIDEO</button>
-                </div>
-<video id="video" style="width:200px;height:200px" controls>
-    <source src="eclipse-video.mp4" type="video/mp4">
-</video>
-<script src="./scripts/jquery-2.2.2.min.js"></script>
+    </div>
+
 </body>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('button').on('click', function(){
-            var video = document.getElementById("video");
-            /*if (video.requestFullscreen) {
-            video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) {
-            video.webkitRequestFullscreen();
-            }*/
-            video.play()
-        })
-    });
-</script>
 </html>
