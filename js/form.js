@@ -1,12 +1,52 @@
 $(document).ready(function() {
+    //
+    // Hidden admin functions -- catch these first
+    //
+    $('button.input-submit').click(function(event) {
+        // Stop form from actually submitting on button click
+        event.preventDefault();
+
+        // Clear all localStorage data
+        if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
+            // Clear all localStorage data
+            localStorage.clear();
+
+            // Show message when localStorage data has been cleared
+            $('div.validation-messages').append('<label class="form-success">All stored data has been deleted!</label>').delay(3000).fadeOut(500, function() {
+                location.reload();
+            });
+
+            // Stop execution of script and log an error
+            throw new Error('All stored data has been deleted!');
+        }
+
+        // Loop through and show all localStorage data
+        else if ($('input.input-email').val() == 'SHOW_ALL_DATA') {
+            for (var i = 0; i < localStorage.length; i++) {
+                var data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                $('div.validation-messages').append('<label class="form-success">EMAIL: ' + data.email + ' ZIP: ' + data.zip + '</label>');
+            }
+
+            // Stop execution of script and log an error
+            throw new Error('All stored data has been displayed.');
+        }
+
+        // Upload stored data
+        // Coming soon...
+    });
+
+    //
     // Validate form using jQuery plugin
+    //
     $('form.lead-form').validate({
         errorPlacement: function(error, element) {
             error.appendTo('div.validation-messages');
         }
     });
 
+    //
     // Check if we can use browser based localStorage
+    //
     if (typeof(Storage) != 'undefined') {
         // Collect form submitted data on submit and write it to localStorage
         $('button.input-submit').click(function(event) {
@@ -36,7 +76,9 @@ $(document).ready(function() {
         });
     }
 
+    //
     // Can't use browser based localStorage? Show JS alert message.
+    //
     else {
         alert('***** Browser based localStorage is not available. Collected data will not be saved! *****');
     }
