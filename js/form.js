@@ -7,7 +7,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         // Clear all localStorage data
-        if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
+            if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
             // Clear all localStorage data
             localStorage.clear();
 
@@ -15,24 +15,30 @@ $(document).ready(function() {
             $('div.validation-messages').append('<label class="form-success">All stored data has been deleted!</label>').delay(3000).fadeOut(500, function() {
                 location.reload();
             });
-
-            // Stop execution of script and log an error
-            throw new Error('All stored data has been deleted!');
         }
 
         // Loop through and show all localStorage data
         else if ($('input.input-email').val() == 'SHOW_ALL_DATA') {
             for (var i = 0; i < localStorage.length; i++) {
-                var data = JSON.parse(localStorage.getItem(localStorage.key(i)));
-                $('div.validation-messages').append('<label class="form-success">EMAIL: ' + data.email + ' ZIP: ' + data.zip + '</label>');
+                var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                $('div.validation-messages').append('<label class="form-success">EMAIL: ' + obj.email_address + ' ZIP: ' + obj.postal_code + '</label>');
             }
-
-            // Stop execution of script and log an error
-            throw new Error('All stored data has been displayed.');
         }
 
-        // Upload stored data
-        // Coming soon...
+        // Upload stored data via AJAX
+        else if ($('input.input-email').val() == 'UPLOAD_ALL_DATA') {
+            for (var i = 0; i < localStorage.length; i++) {
+                var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                $.post('http://api.hobiecat-dev.com/lead-generation-tablet-post/', obj, function(data) {
+                    console.log(obj.email_address + ' ' + obj.postal_code);
+                }, 'json');
+            }
+
+            // Show message when localStorage data has been uploaded
+            $('div.validation-messages').append('<label class="form-success">All stored data has been uploaded.</label>').delay(3000).fadeOut(500, function() {
+                location.reload();
+            });
+        }
     });
 
     //
@@ -58,7 +64,7 @@ $(document).ready(function() {
             var zip = $('input.input-zip').val();
 
             // Create JSON object to pass along to localStorage
-            var json_data = {'email': email, 'zip': zip};
+            var json_data = {'email_address': email, 'postal_code': zip, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
 
             // Get number of items stored in localStorage
             var num_rows = localStorage.length + 1;
