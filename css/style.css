@@ -54,11 +54,17 @@ label {
 }
 label.error {
     color: #a94442;
+    background-color: #f2dede;
     font-size: 20px;
+    border-radius: 10px;
+    padding: 3px 10px;
 }
 label.form-success {
     color: #3c763d;
+    background-color: #dff0d8;
     font-size: 20px;
+    border-radius: 10px;
+    padding: 3px 10px;
 }
 .validation-messages {
     margin-top: 7px;
