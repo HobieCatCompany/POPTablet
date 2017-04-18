@@ -37,6 +37,7 @@
                     error.appendTo('div.validation-messages');
                 }
             });
+
             // Check if we can use browser based localStorage
             if (typeof(Storage) != 'undefined') {
                 // Collect form submitted data on submit and write it to localStorage
@@ -59,10 +60,14 @@
                         // Write JSON data to localStorage
                         localStorage.setItem(num_rows, JSON.stringify(json_data));
 
-                        // Clear 
+                        // Show success message and reload page (clear form fields) after data written to localStorage
+                        $('div.validation-messages').append('<label class="form-success">Thanks for signing up!</label>').delay(3000).fadeOut(500, function() {
+                            location.reload();
+                        });
                     }
                 });
             }
+
             // Can't use browser based localStorage? Show JS alert message.
             else {
                 alert('***** Browser based localStorage is not available. Collected data will not be saved! *****');
