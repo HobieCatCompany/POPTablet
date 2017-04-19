@@ -58,7 +58,7 @@ $(document).ready(function() {
                 var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
                 $.ajax({
                     type: 'POST',
-                    url: 'http://api.hobiecat-dev.com/lead-generation-tablet-post/',
+                    url: 'https://api.hobiecat.com/lead-generation-tablet-post/',
                     data: obj,
                     async: false
                 });
