@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
 
         // Clear all localStorage data
-        if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
+        else if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
             // Clear all localStorage data
             localStorage.clear();
 
