@@ -21,6 +21,9 @@ $(document).ready(function() {
 
                 // Write JSON data to localStorage
                 localStorage.setItem(num_rows, JSON.stringify(json_data));
+
+                // Show message when localStorage data has been spammed
+                $('div.validation-messages').append('<label class="form-success">Spammed!</label>');
             }
         }
 
