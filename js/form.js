@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         // Setup dummy/test data in localStorage
         if ($('input.input-email').val() == 'SPAM_LOCALSTORAGE') {
-            for (var i = 250; i < 500; i++) {
+            for (var i = 500; i < 1000; i++) {
                 // Fake data vars
                 var email = i + '@hobie.com';
                 var zip = '98765';
