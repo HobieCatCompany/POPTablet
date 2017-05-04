@@ -71,7 +71,7 @@ $(document).ready(function() {
             var zip = $('input.input-zip').val();
 
             // Create JSON object to pass along to localStorage
-            var json_data = {'email_address': email, 'postal_code': zip, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
+            var json_data = {'email_address': email, 'postal_code': zip, 'source_id': '13', 'mailpiece_slug': 'surf-email-newsletter'};
 
             // Get number of items stored in localStorage
             var num_rows = localStorage.length + 1;
