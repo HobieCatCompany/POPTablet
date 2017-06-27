@@ -33,13 +33,20 @@
         img.overlay-img {
             width: 30vw;
             height: auto;
+            position: absolute;
+            left: 5%;
+            top: 35%;
+        }
+        @media (orientation: portrait) {
+            img.overlay-img {
+                top: 45%;
+                width: 50vw;
+            }
         }
     </style>
     <body>
         <div class="wrap">
-            <div class="overlay">
-                <img src="images/2017-eclipse-bg-text.png" class="overlay-img">
-            </div>
+            <img src="images/2017-eclipse-bg-text.png" class="overlay-img">
         </div>
     </body>
 </html>
