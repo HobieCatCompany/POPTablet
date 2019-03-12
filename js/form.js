@@ -6,27 +6,6 @@ $(document).ready(function() {
         // Stop form from actually submitting on button click
         event.preventDefault();
 
-        // Setup dummy/test data in localStorage
-        if ($('input.input-email').val() == 'SPAM_LOCALSTORAGE') {
-            for (var i = 500; i < 1000; i++) {
-                // Fake data vars
-                var email = i + '@hobie.com';
-                var zip = '98765';
-
-                // Create JSON object to pass along to localStorage
-                var json_data = {'email_address': email, 'postal_code': zip, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
-
-                // Get number of items stored in localStorage
-                var num_rows = localStorage.length + 1;
-
-                // Write JSON data to localStorage
-                localStorage.setItem(num_rows, JSON.stringify(json_data));
-            }
-
-            // Show message when localStorage data has been spammed
-            $('div.validation-messages').append('<label class="form-success">Spammed!</label>');
-        }
-
         // Clear all localStorage data
         else if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
             // Clear all localStorage data
