@@ -23,7 +23,7 @@ $(document).ready(function() {
             // Loop through and show all stored data
             for (var i = 0; i < localStorage.length; i++) {
                 var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
-                $('div.validation-messages').append('<label class="form-success">EMAIL: ' + obj.email_address + ' ZIP: ' + obj.postal_code + '</label>');
+                $('div.validation-messages').append('<label class="form-success">NAME: ' + obj.name + ' EMAIL: ' + obj.email_address + ' PHONE: ' + obj.phone + '</label>');
             }
         }
 
