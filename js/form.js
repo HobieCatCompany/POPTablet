@@ -7,7 +7,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         // Clear all localStorage data
-        else if ($('input.input-email').val() == 'DELETE_ALL_DATA') {
+        if ($('input.input-name').val() == 'DELETE_ALL_DATA') {
             // Clear all localStorage data
             localStorage.clear();
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
         }
 
         // Loop through and show all localStorage data
-        else if ($('input.input-email').val() == 'SHOW_ALL_DATA') {
+        else if ($('input.input-name').val() == 'SHOW_ALL_DATA') {
             // Show number of displayed rows
             $('div.validation-messages').append('<label class="form-success">Displaying ' + localStorage.length + ' leads.</label>')
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
 
         // Upload stored data via AJAX
-        else if ($('input.input-email').val() == 'UPLOAD_ALL_DATA') {
+        else if ($('input.input-name').val() == 'UPLOAD_ALL_DATA') {
             // Show number of leads being uploaded
             $('div.validation-messages').append('<label class="form-success">Uploading ' + localStorage.length + ' leads.</label>')
 
