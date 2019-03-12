@@ -15,16 +15,28 @@
             <div class="form-wrapper">
                 <!-- Lead gen form -->
                 <form method="post" action="#" class="lead-form">
-                    <div>
+                    <table border="0" style="width: 100%; border: 0;">
+                        <!-- Name field -->
+                        <tr>
+                            <td style="width: 31%;"><label>NAME</label></td>
+                            <td><input type="text" name="name" class="input-name" required></td>
+                        </tr>
                         <!-- Email field -->
-                        <label>Enter Email:</label>
-                        <input type="email" name="email" class="input-email rounded" required>
-                    </div>
-                    <div>
-                        <!-- Zip code field & submit button -->
-                        <label>Zip Code:</label>
-                        <input type="text" name="zip" minlength="5" class="input-zip rounded" required><button class="input-submit rounded">Submit</button>
-                    </div>
+                        <tr>
+                            <td style="width: 31%;"><label>EMAIL</label></td>
+                            <td><input type="email" name="email" class="input-email" required></td>
+                        </tr>
+                        <!-- Phone field -->
+                        <tr>
+                            <td style="width: 31%;"><label>MOBILE #</label></td>
+                            <td><input type="text" name="phone" class="input-phone" required></td>
+                        </tr>
+                        <!-- Form submit button -->
+                        <tr>
+                            <td style="width: 31%;">&nbsp;</td>
+                            <td style="text-align: right;"><button class="input-submit">Submit</button></td>
+                        </tr>
+                    </table>
                     <div class="validation-messages">
                         <!-- Form Validation Messages Here -->
                     </div>
