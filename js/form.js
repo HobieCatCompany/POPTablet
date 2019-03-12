@@ -67,17 +67,18 @@ $(document).ready(function() {
             event.preventDefault();
 
             // Get form's submitted email & zip field data
+            var name = $('input.input-name').val();
             var email = $('input.input-email').val();
-            var zip = $('input.input-zip').val();
+            var phone = $('input.input-phone').val();
 
             // Create JSON object to pass along to localStorage
-            var json_data = {'email_address': email, 'postal_code': zip, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
+            var json_data = {'name': name, 'email_address': email, 'phone': phone, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
 
             // Get number of items stored in localStorage
             var num_rows = localStorage.length + 1;
 
             // Commit data to localStorage if form passes validation
-            if ($('input.input-email').hasClass('valid') && $('input.input-zip').hasClass('valid')) {
+            if ($('input.input-name').hasClass('valid') && $('input.input-email').hasClass('valid') && $('input.input-phone').hasClass('valid')) {
                 // Write JSON data to localStorage
                 localStorage.setItem(num_rows, JSON.stringify(json_data));
 
