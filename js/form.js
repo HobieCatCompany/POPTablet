@@ -72,7 +72,7 @@ $(document).ready(function() {
             var phone = $('input.input-phone').val();
 
             // Create JSON object to pass along to localStorage
-            var json_data = {'name': name, 'email_address': email, 'phone': phone, 'source_id': '12', 'mailpiece_slug': 'eclipse-email-newsletter'};
+            var json_data = {'name': name, 'email_address': email, 'phone': phone, 'source_id': '15', 'mailpiece_slug': 'fishing-email-newsletter'};
 
             // Get number of items stored in localStorage
             var num_rows = localStorage.length + 1;
@@ -83,7 +83,7 @@ $(document).ready(function() {
                 localStorage.setItem(num_rows, JSON.stringify(json_data));
 
                 // Show success message and reload page (clear form fields) after data written to localStorage
-                $('div.validation-messages').append('<label class="form-success">Thanks for signing up!</label>').delay(3000).fadeOut(500, function() {
+                $('div.validation-messages').append('<label class="form-success">Thanks for entering!</label>').delay(3000).fadeOut(500, function() {
                     location.reload();
                 });
             }
