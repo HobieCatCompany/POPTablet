@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hobie Eclipse</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+        <meta name="author" content="Hobie Cat Company" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    </head>
+    <style>
+        @font-face {font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova.eot"); src: url("fonts/proxima-nova/proximanova.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova.woff") format("woff"), url("fonts/proxima-nova/proximanova.ttf") format("truetype"), url("fonts/proxima-nova/proximanova.svg#proxima_nova_rgregular") format("svg"); font-weight: normal; font-style: normal;}
+        @font-face {font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova-italic.eot"); src: url("fonts/proxima-nova/proximanova-italic.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova-italic.woff") format("woff"), url("fonts/proxima-nova/proximanova-italic.ttf") format("truetype"), url("fonts/proxima-nova/proximanova-italic.svg#proxima_novaregular_italic") format("svg"); font-weight: normal; font-style: italic;}
+        @font-face {font-family: 'proxima-nova'; src: url("fonts/proxima-nova/proximanova-bold.eot"); src: url("fonts/proxima-nova/proximanova-bold.eot?#iefix") format("embedded-opentype"), url("fonts/proxima-nova/proximanova-bold.woff") format("woff"), url("fonts/proxima-nova/proximanova-bold.ttf") format("truetype"), url("fonts/proxima-nova/proximanova-bold.svg#proxima_nova_rgbold") format("svg"); font-weight: bold; font-style: normal;}
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'proxima-nova', helvetica, arial, verdana, sans-serif;
+            font-size: 14px;
+            color: #222;
+        }
+        div.wrap {
+            width: 100%;
+            height: 100vh;
+            background-image: url(images/2018-eclipse-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        img.overlay-img {
+            width: 55vw;
+            height: auto;
+            position: absolute;
+            left: 21%;
+            top: 25%;
+        }
+        img.play-button {
+            width: 125px;
+            height: 125px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -62px;
+            margin-top: -62px;
+        }
+        @media (orientation: portrait) {
+            img.overlay-img {
+                width: 80vw;
+                left: 10%;
+                top: 34%;
+            }
+        }
+    </style>
+    <body>
+        <div class="wrap">
+            <img src="images/2018-eclipse-text.png" class="overlay-img">
+            <a href="eclipse-video.mp4"><img src="images/2017-eclipse-play.png" class="play-button"></a>
+        </div>
+    </body>
+</html>
