@@ -72,7 +72,7 @@ $(document).ready(function() {
             var phone = $('input.input-phone').val();
 
             // Create JSON object to pass along to localStorage
-            var json_data = {'name': name, 'email_address': email, 'phone': phone, 'source_id': '15', 'mailpiece_slug': 'fishing-email-newsletter'};
+            var json_data = {'name': name, 'email_address': email, 'phone': phone, 'source_id': '16', 'mailpiece_slug': 'fishing-email-newsletter'};
 
             // Get number of items stored in localStorage
             var num_rows = localStorage.length + 1;
