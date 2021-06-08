@@ -26,6 +26,17 @@ $(document).ready(function() {
                 $('div.validation-messages').append('<label class="form-success">NAME: ' + obj.name + ' EMAIL: ' + obj.email_address + ' PHONE: ' + obj.phone + '</label>');
             }
         }
+        
+        // Loop through and show all localStorage data
+        else if ($('input.input-name').val() == 'PICK_A_WINNER') {
+            // Show number of displayed rows
+            $('div.validation-messages').append('<label class="form-success">' + localStorage.length + ' entries.</label>')
+
+            // Loop through and show all stored data
+            var winner_index = Math.floor(Math.random() * localStorage.length); 
+            var obj = JSON.parse(localStorage.getItem(localStorage.key(winner_index)));
+            $('div.validation-messages').append('<label class="form-success">NAME: ' + obj.name + ' EMAIL: ' + obj.email_address + ' PHONE: ' + obj.phone + '</label>');
+        }
 
         // Upload stored data via AJAX
         else if ($('input.input-name').val() == 'UPLOAD_ALL_DATA') {
